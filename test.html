@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = {user: "bf866130-c18e-4a98-b916-461b19a66bc2", grade: 1.0}
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://t7.itsec.sec.in.tum.de/set-grade");
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.setRequestHeader("Content-Type", "application/json");
+    
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+            }
+        };
+    
+        xhr.send(data);
+    </script>
+</body>
+</html>
